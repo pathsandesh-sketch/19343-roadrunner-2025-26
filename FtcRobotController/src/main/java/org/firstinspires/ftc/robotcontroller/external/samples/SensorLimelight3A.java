@@ -47,7 +47,6 @@ import java.util.List;
 /*
  * This OpMode illustrates how to use the Limelight3A Vision Sensor.
  *
- * @see <a href="https://limelightvision.io/">Limelight</a>
  *
  * Notes on configuration:
  *
@@ -67,7 +66,6 @@ import java.util.List;
  *   below the name of the Limelight on the top level configuration screen.
  */
 @TeleOp(name = "Sensor: Limelight3A", group = "Sensor")
-@Disabled
 public class SensorLimelight3A extends LinearOpMode {
 
     private Limelight3A limelight;
