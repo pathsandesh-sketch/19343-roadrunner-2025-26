@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Servo;
 
-@TeleOp(name = "Servo_Degree_Control")
+@TeleOp(name = "Servo_Degree_Tuning")
 public class spindexer extends LinearOpMode {
 
     Servo spinservo;
