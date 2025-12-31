@@ -11,8 +11,8 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 import java.util.ArrayList;
 import java.util.List;
 
-@TeleOp(name = "Spindexer_Final")
-public class SpindexerFinal extends LinearOpMode {
+@TeleOp(name = "Spindexer_Ini")
+public class SpindexerInitial extends LinearOpMode {
 
     // ================= HARDWARE =================
     private Servo spinServo;
@@ -109,6 +109,7 @@ public class SpindexerFinal extends LinearOpMode {
             telemetry.addData("Current Angle", "%.1f°", currentAngle);
             telemetry.addData("Launch Angle", "%.1f°", launchAngle);
 
+
             telemetry.addLine("----- Slots -----");
             for (int i = 0; i < NUM_SLOTS; i++) {
                 telemetry.addData(
@@ -172,16 +173,16 @@ public class SpindexerFinal extends LinearOpMode {
         double minRotation = 999;
         int bestSlot = -1;
 
+        double rotation = 0;
         for (int i : candidates) {
-            double rotation =
-                    (launchAngle - slotAngle[i] - currentAngle + SERVO_RANGE) % SERVO_RANGE;
+            rotation = (launchAngle - slotAngle[i] - currentAngle + SERVO_RANGE) % SERVO_RANGE;
 
             if (rotation < minRotation) {
                 minRotation = rotation;
                 bestSlot = i;
             }
         }
-
+        telemetry.addData("Value of Rotation", "%.1f°", rotation);
         return bestSlot;
     }
 
