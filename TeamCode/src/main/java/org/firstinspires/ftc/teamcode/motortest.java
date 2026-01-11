@@ -4,12 +4,11 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Servo;
 
-@TeleOp(name = "Servo_Degree_Tuning")
-public class spindexer extends LinearOpMode {
+@TeleOp(name = "motortest")
+public class motortest extends LinearOpMode {
 
     Servo spinservo1;
     Servo spinservo2;
-    Servo spinservo3;
     double targetDegrees = 0;
 
     @Override
@@ -17,7 +16,6 @@ public class spindexer extends LinearOpMode {
 
         spinservo1 = hardwareMap.get(Servo.class, "spinservo1");
         spinservo2 = hardwareMap.get(Servo.class, "spinservo2");
-        spinservo3 = hardwareMap.get(Servo.class, "spinservo3");
 
         telemetry.addLine("INIT OK");
         telemetry.update();
@@ -36,8 +34,8 @@ public class spindexer extends LinearOpMode {
 
             double servoPos = degreesToServo(targetDegrees);
             spinservo1.setPosition(servoPos);
-            spinservo2.setPosition(servoPos);
-            spinservo3.setPosition(servoPos);
+            //spinservo2.setDirection(Servo.Direction.REVERSE);
+            //spinservo2.setPosition(servoPos);
 
             telemetry.addData("Target Degrees", targetDegrees);
             telemetry.addData("Servo Position", servoPos);
