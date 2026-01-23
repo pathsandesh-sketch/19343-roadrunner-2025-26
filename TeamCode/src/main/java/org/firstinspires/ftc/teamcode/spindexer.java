@@ -12,6 +12,7 @@ public class spindexer extends LinearOpMode {
     Servo spinservo3;
     double targetDegrees = 0;
 
+
     @Override
     public void runOpMode() {
 
@@ -47,7 +48,7 @@ public class spindexer extends LinearOpMode {
 
     // 🔹 Conversion function
     public double degreesToServo(double degrees) {
-        degrees = Math.max(0, Math.min(315, degrees));
-        return degrees / 315.0;
+        degrees = Math.max(0, Math.min(300, degrees));
+        return degrees / 300.0;
     }
 }
